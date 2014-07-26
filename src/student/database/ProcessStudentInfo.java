@@ -6,6 +6,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import xml.reader.XmlReader;
+
 public class ProcessStudentInfo {
 
 		/*
@@ -24,7 +26,8 @@ public class ProcessStudentInfo {
 		 * 
 		 */
 			public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-				
+				XmlReader reader = new XmlReader();
+				reader.parseData("id");
 			}
 
 }
