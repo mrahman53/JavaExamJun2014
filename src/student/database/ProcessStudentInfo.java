@@ -1,6 +1,8 @@
 package student.database;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -26,6 +28,7 @@ public class ProcessStudentInfo {
 		 * 
 		 */
 			public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+				List<String> list = new ArrayList();
 				XmlReader reader = new XmlReader();
 				reader.parseData("id");
 			}
