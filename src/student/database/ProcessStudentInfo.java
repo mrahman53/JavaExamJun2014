@@ -8,6 +8,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import xml.reader.Student;
 import xml.reader.XmlReader;
 
 public class ProcessStudentInfo {
@@ -28,9 +29,12 @@ public class ProcessStudentInfo {
 		 * 
 		 */
 			public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-				List<String> list = new ArrayList();
+				List<Student> list = new ArrayList();
 				XmlReader reader = new XmlReader();
-				reader.parseData("id");
+				list = reader.parseData("id");
+				for(Student st:list){
+					System.out.println(st);
+				}
 			}
 
 }

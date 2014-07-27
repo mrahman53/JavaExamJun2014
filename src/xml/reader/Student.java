@@ -10,6 +10,9 @@ public class Student {
 	public String score;
 	public String id;
 	
-	
+	@Override
+	public String toString(){
+		return "Student" + "("+"id= "+id+")"+ firstName+" "+lastName+" "+" Grade = "+score;
+	}
 	
 }
