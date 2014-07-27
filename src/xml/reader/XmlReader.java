@@ -20,9 +20,8 @@ import org.xml.sax.SAXException;
  */
 
 public class XmlReader {
-	String path = "C:\\Users\\PeopleNTech\\workspace\\InClassCodingExam\\src\\xml\\reader\\data.xml";
 	
-	public List<Student> parseData(String tagName) throws ParserConfigurationException, SAXException, IOException{
+	public List<Student> parseData(String tagName,String path) throws ParserConfigurationException, SAXException, IOException{
 		
 	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder builder = factory.newDocumentBuilder();
@@ -71,8 +70,6 @@ public class XmlReader {
 			grade="C";
 		}
 		return grade;	
-		
-		
 	}
 	
 }

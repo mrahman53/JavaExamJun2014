@@ -2,7 +2,9 @@ package student.database;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -29,12 +31,22 @@ public class ProcessStudentInfo {
 		 * 
 		 */
 			public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-				List<Student> list = new ArrayList();
+				String pathSelenium  = "C:\\Users\\PeopleNTech\\workspace\\InClassCodingExam\\src\\xml\\reader\\data.xml";
+				String pathQtp = "C:\\Users\\PeopleNTech\\workspace\\InClassCodingExam\\src\\xml\\reader\\qtp.xml";
+				String tag = "id";
+				Map<String, List<Student>> map = new LinkedHashMap<String, List<Student>>();
+				List<Student> listSelenium = new ArrayList<Student>();
+				List<Student> listQtp = new ArrayList<Student>();
 				XmlReader reader = new XmlReader();
-				list = reader.parseData("id");
-				for(Student st:list){
-					System.out.println(st);
+				listSelenium = reader.parseData(tag,pathSelenium);
+				listQtp = reader.parseData(tag,pathQtp);
+				map.put("Selenium", listSelenium);
+				map.put("QTP", listQtp);
+		      		
+				for(Map.Entry<String,List<Student>> entry:map.entrySet()){
+					System.out.println(entry.getKey()+"  "+entry.getValue());
 				}
+				
 			}
 
 }
